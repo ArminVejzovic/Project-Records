@@ -1,0 +1,43 @@
+{
+  "name": "e-p-a-v",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "finalhandler": "^1.2.0",
+    "html-pdf": "^3.0.1",
+    "http-errors": "~1.6.3",
+    "memory-cache": "^0.2.0",
+    "method-override": "^3.0.0",
+    "morgan": "~1.9.1",
+    "nodemailer": "^6.9.8",
+    "nodemon": "^3.0.3",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.11.3",
+    "serve-static": "^1.15.0",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
+  },
+  "main": "app.js",
+  "author": "Armin Vejzovic",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/socket.io": "^3.0.2"
+  }
+}

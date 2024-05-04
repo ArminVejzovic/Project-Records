@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekti</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .projekti-lista {
+            border: 1px solid #000;
+            color: #000;
+            border-radius: 5px;
+        }
+
+        .projekti-lista li {
+            border-bottom: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="projekti-naslov mt-5">Projekti</h1><br>
+
+    <% result.rows.forEach(project => { %>
+        <ul class="projekti-lista list-group mb-3">
+            <li class="list-group-item">
+                <strong>Naziv Projekta:</strong> <%= project.naziv %>
+            </li>
+            <li class="list-group-item">
+                <strong>Opis Projekta:</strong> <%= project.opis %>
+            </li>
+            <li class="list-group-item">
+                <strong>Datum početka:</strong> <%= project.datum_pocetka %>
+            </li>
+            <li class="list-group-item">
+                <strong>Datum završetka:</strong> <%= project.datum_zavrsetka %>
+            </li>
+        </ul>
+    <% }) %>
+
+    <a href="/admin/projects/create" class="btn btn-primary">Kreiraj novi projekat</a><br><br>
+    <a href="/users/dashboard" class="btn btn-primary mb-3">Povratak na Početak</a><br><br>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

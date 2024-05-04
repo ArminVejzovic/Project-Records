@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izveštaji za projekt</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="text-center mb-4">Izveštaji za projekt - <%= projects.naziv %></h1>
+
+                    <div class="mb-4">
+                        <h2>Statistika</h2>
+                        <p>Ukupno zadataka: <%= totalTasks.count %></p>
+                        <p>Završeni zadaci: <%= completedTasks %></p>
+
+                        <% if (totalTasks.count > 0) { %>
+                            <p>Procenat završenosti: <%= completionPercentage.toFixed(2) %></p>
+                        <% } else { %>
+                            <p>Procenat završenosti: 0.00</p>
+                        <% } %>
+                    </div>
+
+
+                    <div class="mb-4">
+                        <h2>Zadaci</h2>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Naziv zadatka</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <% tasks.forEach(task => { %>
+                                <tr>
+                                    <td><%= task.naziv %></td>
+                                    <td><%= task.zavrsen ? 'Završen' : 'Nije završen' %></td>
+                                </tr>
+                            <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <a href="/users/dashboard" class="btn btn-primary mb-3">Povratak na Početak</a><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

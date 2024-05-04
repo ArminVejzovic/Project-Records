@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekat: <%= project.naziv %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<h1><%= project.naziv %></h1>
+<div class="container mt-4">
+    <% tasks.forEach(task => { %>
+        <% if(task.zavrsen === false) { %>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><%= task.naziv %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">ID: <%= task.id %></h6>
+                    <p class="card-text"><%= task.opis %></p>
+                </div>
+            </div>
+        <% } %>
+    <% }); %>
+</div>
+
+<div class="container mt-5 mb-5">
+    <form action="/employee/projects/quick-submit-hours" method="post">
+
+        <label class="mr-2" for="quickInput">Brzi unos radnih sati:</label>
+        <input type="text" id="quickInput" name="quickInput" placeholder="#projekat ##task t5" class="form-control mr-2 col-10 mb-3" required>
+        <div id="messageContainer" class="container mt-3"></div>
+
+        <button type="submit" class="btn btn-primary">Unesi radne sate</button>
+    </form>
+</div>
+
+
+<h3>Forma za unos radnih sati: </h3>
+<br>
+
+<form action="/employee/projects/submit-hours/<%= project.id %>" method="POST" class="mb-3">
+    <div class="form-group">
+        <label for="task">Zadatak:</label>
+        <select class="form-control" id="task" name="task" required>
+            <% tasks.forEach(task => { %>
+                <% if(task.zavrsen === false) { %>
+                    <option value="<%= task.naziv %>"><%= task.naziv %></option>
+                <% } %>
+            <% }); %>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="hours">Sati:</label>
+        <input type="number" class="form-control" id="hours" name="hours" min="0" max="24" required>
+    </div>
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <select class="form-control" id="status" name="status" required>
+            <option value="true">Završen zadatak</option>
+            <option value="false">Nije završen zadatak</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Unesi radne sate</button>
+</form>
+
+<br>
+<a href="/employee/projects/selection" class="btn btn-secondary mr-2">Nazad na odabir projekata</a>
+<a href="/users/logout" class="btn btn-danger">Odjava</a>
+
+<br>
+<br>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

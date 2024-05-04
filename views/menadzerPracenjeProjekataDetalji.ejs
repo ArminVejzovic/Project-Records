@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalji projekta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h1 class="mb-4">Detalji projekta</h1>
+
+    <h2>Informacije o projektu</h2>
+    <ul class="list-group mb-4">
+        <li class="list-group-item"><strong>ID:</strong> <%= project.id %></li>
+        <li class="list-group-item"><strong>Naziv:</strong> <%= project.naziv %></li>
+        <li class="list-group-item"><strong>Opis:</strong> <%= project.opis %></li>
+    </ul>
+
+    <h2>Zadaci</h2>
+    <ul class="list-group mb-4">
+        <% tasks.forEach(task => { %>
+            <% if (task.projekt_id === project.id) { %>
+                <li class="list-group-item"><%= task.naziv %>: <%= task.opis %> -> Status(Zavrsen) : <%= task.zavrsen %></li>
+            <% } %>
+        <% }); %>
+    </ul>
+
+    <h2>Utrošeni radni sati</h2>
+    <ul class="list-group">
+        <% hours.forEach(hour => { %>
+            <li class="list-group-item">Korisnik <%= hour.ime %> <%= hour.prezime %> je dodao <%= hour.sati %> sati rada za zadatak <%= hour.task %> (Datum: <%= new Date(hour.datum).toLocaleDateString('en-GB') %>)</li>
+        <% }); %>
+    </ul>
+    <br>
+    <a href="/users/dashboard" class="btn btn-primary mb-3">Povratak na Početak</a><br>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

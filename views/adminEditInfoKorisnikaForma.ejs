@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uredi korisnika</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Uredjivanje Korisnika</h1>
+
+    <form action="/admin/users/edit/<%= user.id %>" method="post">
+    <div class="form-group">
+            <label for="ime">Ime:</label>
+            <input type="text" class="form-control" id="ime" name="ime" value="<%= user.ime %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="prezime">Prezime:</label>
+            <input type="text" class="form-control" id="prezime" name="prezime" value="<%= user.prezime %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" value="<%= user.email %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Sifra:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="uloga">Uloga:</label>
+            <select class="form-control" id="uloga" name="uloga" required>
+                <option value="administrator" <%= user.uloga === 'administrator' ? 'selected' : '' %>>Administrator</option>
+                <option value="menadzer" <%= user.uloga === 'menadzer' ? 'selected' : '' %>>Menadzer</option>
+                <option value="radnik" <%= user.uloga === 'radnik' ? 'selected' : '' %>>Radnik</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ažuriraj Podatke</button>
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

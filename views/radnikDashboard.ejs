@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radnik Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="/images/ep_slika_logo.jpg" width="80px" height="65px">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/users/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Radnik Dashboard</h2>
+            <br>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/employee/projects/selection">
+                        <i class="fas fa-briefcase"></i> Rad na projektima
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/enter-attentdence">
+                        <i class="far fa-clock"></i> Unesi prisustvo
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/generate-work-report">
+                        <i class="far fa-file-alt"></i> Generisi i posalji izvjestaj o radu
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="http://localhost:4000">
+                        <i class="fas fa-comments"></i> Chat
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/enter-notification-to-employees-gmail">
+                        <i class="far fa-envelope"></i> Posalji obavjestenje zaposlenim na mail
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+    <p>&copy; 2024 EvidencijaProjekata</p>
+    <p>Kontakt: <a href="mailto:evidencija.projekata@outlook.com"><i class="fas fa-envelope"></i> evidencija.projekata@outlook.com</a></p>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
