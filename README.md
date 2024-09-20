@@ -45,8 +45,8 @@ Setup Instructions:
 
 bash
 
-      git clone https://github.com/your-username/evidencija-projekata.git
-      cd evidencija-projekata
+      git clone https://github.com/your-username/Project-Records.git
+      cd Project-Records
 
 2. Install Dependencies:
 
