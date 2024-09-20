@@ -59,23 +59,19 @@ Create a .env file in the root of the project and add the following configuratio
 
 bash
 
-  # Email service configuration
   EMAIL_SERVICE=<your-email-service>
   EMAIL_USER=<your-email-address>
   EMAIL_PASSWORD=<your-email-password>
   
-  # PostgreSQL database configuration
   DB_USER=<your-database-username>
   DB_HOST=<your-database-host>
   DB_NAME=<your-database-name>
   DB_PASSWORD=<your-database-password>
   DB_PORT=<your-database-port>
   
-  # Ports for running the application
   EXPRESS_PORT=3000
   STATIC_PORT=4000
   
-  # Session secret for securing cookies and sessions
   SESION_SECRET=<your-session-secret>
 
 Note: Ensure that your .env file is included in .gitignore to prevent pushing sensitive data to a public repository.
