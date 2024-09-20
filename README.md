@@ -77,8 +77,6 @@ bash
       
       SESION_SECRET=<your-session-secret>
 
-Note: Ensure that your .env file is included in .gitignore to prevent pushing sensitive data to a public repository.
-
 4. Database Setup:
 4.1 Create the PostgreSQL Database
 
