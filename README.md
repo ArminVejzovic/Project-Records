@@ -38,7 +38,7 @@ Technologies Used:
         Email notifications for project updates.
 
 Demo Video Application Link:
-[Project-Records Demo]([https://youtu.be/Rb8raOZi6J8])
+[Project-Records Demo](https://youtu.be/Rb8raOZi6J8)
 
 Setup Instructions:
 1. Clone the Repository:
