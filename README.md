@@ -171,11 +171,15 @@ The application will be accessible at http://localhost:3000.
 After setting up the application:
 
 Create different types of users (admin, manager, and workers).
+
 Test functionalities like project creation, task assignment, and work hours logging.
 
 Usage:
 
 Admin Panel: Admins can add projects, assign workers, and manage users.
+
 Project Manager Panel: Project managers can create and manage projects and monitor work progress.
+
 Worker Panel: Workers can log their hours for assigned tasks and communicate with their team members.
+
 Group Chat: All users can communicate via a group chat that allows for messaging across the different roles.
