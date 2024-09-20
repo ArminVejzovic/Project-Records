@@ -42,8 +42,8 @@ Setup Instructions:
 
 bash
 
-  git clone https://github.com/your-username/evidencija-projekata.git
-  cd evidencija-projekata
+      git clone https://github.com/your-username/evidencija-projekata.git
+      cd evidencija-projekata
 
 2. Install Dependencies:
 
@@ -51,7 +51,7 @@ Ensure you have Node.js and PostgreSQL installed on your system. After that, run
 
 bash
 
-  npm install
+      npm install
 
 3. Setup the .env File:
 
@@ -59,20 +59,20 @@ Create a .env file in the root of the project and add the following configuratio
 
 bash
 
-  EMAIL_SERVICE=<your-email-service>
-  EMAIL_USER=<your-email-address>
-  EMAIL_PASSWORD=<your-email-password>
-  
-  DB_USER=<your-database-username>
-  DB_HOST=<your-database-host>
-  DB_NAME=<your-database-name>
-  DB_PASSWORD=<your-database-password>
-  DB_PORT=<your-database-port>
-  
-  EXPRESS_PORT=3000
-  STATIC_PORT=4000
-  
-  SESION_SECRET=<your-session-secret>
+      EMAIL_SERVICE=<your-email-service>
+      EMAIL_USER=<your-email-address>
+      EMAIL_PASSWORD=<your-email-password>
+      
+      DB_USER=<your-database-username>
+      DB_HOST=<your-database-host>
+      DB_NAME=<your-database-name>
+      DB_PASSWORD=<your-database-password>
+      DB_PORT=<your-database-port>
+      
+      EXPRESS_PORT=3000
+      STATIC_PORT=4000
+      
+      SESION_SECRET=<your-session-secret>
 
 Note: Ensure that your .env file is included in .gitignore to prevent pushing sensitive data to a public repository.
 
@@ -83,7 +83,7 @@ First, ensure that PostgreSQL is installed and running. Then create a new databa
 
 sql
 
-  CREATE DATABASE evidencija_1;
+      CREATE DATABASE evidencija_1;
 
 4.2 Create the Tables
 
@@ -91,69 +91,69 @@ Run the following SQL script to create the necessary tables for the project:
 
 sql
 
-  CREATE TABLE radnici (
-      id SERIAL PRIMARY KEY,
-      ime VARCHAR(255),
-      prezime VARCHAR(255),
-      korisnicko_ime VARCHAR(255),
-      sifra VARCHAR(255),
-      uloga VARCHAR(50),
-      nadredjeni_id INTEGER
-  );
-  
-  CREATE TABLE projekti (
-      id SERIAL PRIMARY KEY,
-      naziv VARCHAR(255),
-      opis TEXT,
-      datum_pocetka DATE,
-      datum_zavrsetka DATE
-  );
-  
-  CREATE TABLE zadaci (
-      id SERIAL PRIMARY KEY,
-      naziv VARCHAR(255),
-      opis TEXT,
-      projekt_id INTEGER REFERENCES projekti(id),
-      zavrsen BOOLEAN
-  );
-  
-  CREATE TABLE radni_sati (
-      id SERIAL PRIMARY KEY,
-      radnik_id INTEGER REFERENCES radnici(id),
-      projekt_id INTEGER REFERENCES projekti(id),
-      task VARCHAR(255),
-      sati INTEGER,
-      datum DATE
-  );
-  
-  CREATE TABLE evidencija_prisustva (
-      id SERIAL PRIMARY KEY,
-      radnik_id INTEGER REFERENCES radnici(id),
-      datum DATE,
-      prisutan BOOLEAN
-  );
-  
-  CREATE TABLE poruke (
-      id SERIAL PRIMARY KEY,
-      posiljalac_id INTEGER REFERENCES radnici(id),
-      primalac_id INTEGER REFERENCES radnici(id),
-      sadrzaj TEXT,
-      datum TIMESTAMP
-  );
-  
-  CREATE TABLE dodeljeni_projekti (
-      id SERIAL PRIMARY KEY,
-      radnik_id INTEGER REFERENCES radnici(id),
-      projekt_id INTEGER REFERENCES projekti(id),
-      menadzer_id INTEGER REFERENCES radnici(id)
-  );
-  
-  CREATE TABLE prijave (
-      id SERIAL PRIMARY KEY,
-      radnik_id INTEGER REFERENCES radnici(id),
-      action TEXT,
-      timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-  );
+      CREATE TABLE radnici (
+          id SERIAL PRIMARY KEY,
+          ime VARCHAR(255),
+          prezime VARCHAR(255),
+          korisnicko_ime VARCHAR(255),
+          sifra VARCHAR(255),
+          uloga VARCHAR(50),
+          nadredjeni_id INTEGER
+      );
+      
+      CREATE TABLE projekti (
+          id SERIAL PRIMARY KEY,
+          naziv VARCHAR(255),
+          opis TEXT,
+          datum_pocetka DATE,
+          datum_zavrsetka DATE
+      );
+      
+      CREATE TABLE zadaci (
+          id SERIAL PRIMARY KEY,
+          naziv VARCHAR(255),
+          opis TEXT,
+          projekt_id INTEGER REFERENCES projekti(id),
+          zavrsen BOOLEAN
+      );
+      
+      CREATE TABLE radni_sati (
+          id SERIAL PRIMARY KEY,
+          radnik_id INTEGER REFERENCES radnici(id),
+          projekt_id INTEGER REFERENCES projekti(id),
+          task VARCHAR(255),
+          sati INTEGER,
+          datum DATE
+      );
+      
+      CREATE TABLE evidencija_prisustva (
+          id SERIAL PRIMARY KEY,
+          radnik_id INTEGER REFERENCES radnici(id),
+          datum DATE,
+          prisutan BOOLEAN
+      );
+      
+      CREATE TABLE poruke (
+          id SERIAL PRIMARY KEY,
+          posiljalac_id INTEGER REFERENCES radnici(id),
+          primalac_id INTEGER REFERENCES radnici(id),
+          sadrzaj TEXT,
+          datum TIMESTAMP
+      );
+      
+      CREATE TABLE dodeljeni_projekti (
+          id SERIAL PRIMARY KEY,
+          radnik_id INTEGER REFERENCES radnici(id),
+          projekt_id INTEGER REFERENCES projekti(id),
+          menadzer_id INTEGER REFERENCES radnici(id)
+      );
+      
+      CREATE TABLE prijave (
+          id SERIAL PRIMARY KEY,
+          radnik_id INTEGER REFERENCES radnici(id),
+          action TEXT,
+          timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
 
 5. Run the Application:
 
@@ -161,7 +161,7 @@ Start the server using the following command:
 
 bash
 
-  npm start
+      npm start
 
 The application will be accessible at http://localhost:3000.
 6. Testing the Application:
